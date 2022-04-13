@@ -1,10 +1,12 @@
 
-import Komponens from './komponens';
+import Bootstrap from './komponens/kedua_Styling/boostrap';
+
+
 
 function App() {
     return (
       <div className="App">
-          <Komponens />
+          <Bootstrap/>
       </div>
     );
   }
