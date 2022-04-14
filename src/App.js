@@ -1,12 +1,12 @@
 
-import Bootstrap from './komponens/kedua_Styling/boostrap';
+import Form_Validasi from './komponens/form_validasi';
 
 
 
 function App() {
     return (
       <div className="App">
-          <Bootstrap/>
+          <Form_Validasi/>
       </div>
     );
   }
