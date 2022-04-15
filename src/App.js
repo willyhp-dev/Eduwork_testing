@@ -1,5 +1,9 @@
 
 import Form_Validasi from './komponens/form_validasi';
+import LifeCycler from './komponens/lifecycle_komponen';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import LifeCycleAxios from './komponens/lifecycle_axios';
+
 
 
 

@@ -5,10 +5,10 @@ import * as Validator from 'validatorjs';
 const Input = ({label,type,name,placeholder,onChange}) => {
     return (
         <div>
-        <label htmlFor="">
-            {label} <br />
-             <input type={type} name = {name} placeholder={placeholder} onChange={e => onChange(e.target.value)} />
-        </label>        
+       <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>{label}</Form.Label>
+        <Form.Control type={type} placeholder={placeholder} name ={name} onChange={e => onChange(e.target.value)} />
+        </Form.Group>     
     </div>
     )
     
@@ -17,7 +17,12 @@ const ShowErrors = ({errors}) =>{
     return(
     <ul style={{ color:'red'}}>
        {
-           errors.map((error,i) => <li key = {i}>{error}</li>)
+           errors.map((error,i) => <li key = {i}>
+             
+               <div class="alert alert-danger" role="alert">
+               {error}
+              </div>
+               </li>)
        }
     </ul>
     )
@@ -66,9 +71,11 @@ export default class Forms_Validasi extends React.Component{
     render(){
         return(
             <div>
+                <h3>Tugas Form &&Validasi</h3>
                 {
                     this.state.errors && <ShowErrors errors={this.state.errors}/>
                 }
+                
                 <form onSubmit={this.handleSubmit}>
                     <Input type="email" name="email" placeholder='Example : name@gmail.com' label='Email' 
                     onChange ={value =>this.setState({email : value})} />
@@ -82,7 +89,7 @@ export default class Forms_Validasi extends React.Component{
                     onChange = {value =>this.setState({password:value})}
                     />
                     <br />
-                    <button type="submit">Submit</button>
+                    <button type="submit" className='btn btn-primary'>Submit</button>
                 </form>
             </div>
         )
