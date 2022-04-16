@@ -9,7 +9,7 @@ export default class Images extends React.Component{
                    <Card>
                     <Card.Header>Eduwork Reactjs</Card.Header>
                     <Card.Body>
-                    <img src={Image} width="100%" height="300px"  />
+                    <img src={Image} width="100%" height="400px"  />
                     </Card.Body>
                     </Card>
                </div>

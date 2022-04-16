@@ -1,30 +1,35 @@
 
-import React from 'react';
-import { Button, Card, Form } from 'react-bootstrap';
+import React, { useState } from 'react';
+import {  Button, Card, Form } from 'react-bootstrap';
 
-export default class Forms extends React.Component{
-    render(){
+export default function Forms(){
+    const [Formss] = useState([
+        {index:1,type:"email",label:"email Address",placeholder:"Example : Name@example.com" },
+        {index:2,type:"text",label:"Username",placeholder:"Example : Budi Santoso" },
+        {index:3,type:"text",label:"No Handphone",placeholder:"Example : 081245678923" },
+        {index:4,type:"text",label:"Alamat",placeholder:"Example : Jln.Sungai Raya Dalam" },
+    ])
+    const Input = ({type,placeholder,label,key}) =>{
+        return(
+            <Form.Group key ={key} className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>{label}</Form.Label>
+                        <Form.Control type={type} placeholder={placeholder} />            
+            </Form.Group>
+        )
+    }
         return(
             <div>
                 <Card border="secondary" className='bg-success text-white' >
                     <Card.Header>Contact Form</Card.Header>
                     <Card.Body>
                     <Form>
-                        <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Email address</Form.Label>
-                        <Form.Control type="email" placeholder="Enter email" />
-                        <Form.Text className="text-white">
-                        We'll never share your email with anyone else.
-                        </Form.Text>
-                        </Form.Group>
-
-                        <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Password</Form.Label>
-                        <Form.Control type="password" placeholder="Password" />
-                        </Form.Group>
-                        <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                        <Form.Check type="checkbox" label="Check me out" />
-                        </Form.Group>
+                      {
+                          Formss.map(forms=>
+                            <Input key ={forms.index} type = {forms.type} placeholder={forms.placeholder}  
+                            label ={forms.label}
+                            />
+                            )
+                      }
                         <Button variant="primary" type="submit">
                             Submit
                         </Button>
@@ -34,4 +39,3 @@ export default class Forms extends React.Component{
             </div>
         )
     }
-}

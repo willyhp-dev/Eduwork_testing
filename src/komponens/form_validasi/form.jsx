@@ -18,7 +18,6 @@ const ShowErrors = ({errors}) =>{
     <ul style={{ color:'red'}}>
        {
            errors.map((error,i) => <li key = {i}>
-             
                <div class="alert alert-danger" role="alert">
                {error}
               </div>
@@ -26,57 +25,60 @@ const ShowErrors = ({errors}) =>{
        }
     </ul>
     )
-    
 }
-
+const ShowAlert =({success}) =>{
+    return(
+        <div>{success}</div>
+    )
+}
+const alert = false;
 export default class Forms_Validasi extends React.Component{
     state = {
         email : '',
         username : '',
         no_hp : '',
         password : '',
-        errors : []
+        errors : [],
     }
     handleSubmit = event => {
         event.preventDefault();
         const {email,username,no_hp,password} = this.state;
-        if(email.length === 0  || username.length === 0 || no_hp.length < 12 || password.length < 8){
+        
             let data = {email, username, no_hp,password}
+            console.log(data)
             let rules ={
                 email:'required|email',
                 username :'required',
                 no_hp:'required|min:12',
                 password: 'required|min:8',
+               
             }
-          
-                alert('Ada Error')
                 let validation = new Validator(data,rules);
-                validation.passes();
-                this.setState({
-                    errors:[
-                       ...validation.errors.get('email'), 
-                       ...validation.errors.get('username'), 
-                       ...validation.errors.get('no_hp'), 
-                       ...validation.errors.get('password')
-        
-                    ]
-                })
+
+                    validation.passes();
+                    this.setState({
+                        errors:[
+                           ...validation.errors.get('email'), 
+                           ...validation.errors.get('username'), 
+                           ...validation.errors.get('no_hp'), 
+                           ...validation.errors.get('password'),
+                        ]
+                    });
+                    if(!this.setState){
+                        console.log('success')
+                    }
+                   
+               
+                
         }
-        else{
-            alert('Data Anda Berhasil Register')
-        }
-      
-        
-    }
     render(){
         return(
             <div>
-                <h3>Tugas Form &&Validasi</h3>
-                {
-                    this.state.errors && <ShowErrors errors={this.state.errors}/>
-                }
-                
+                <h3>Tugas Form && Validasi</h3>
                 <form onSubmit={this.handleSubmit}>
+                {
+                    this.state.errors ? <ShowErrors errors={this.state.errors} /> :<ShowAlert success ={this.state.success} />
+                }
                     <Input type="email" name="email" placeholder='Example : name@gmail.com' label='Email' 
                     onChange ={value =>this.setState({email : value})} />
                     <Input type="text" name="username" placeholder='Example : Willyhp' label ='Username'

@@ -3,12 +3,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Navbars from './navbar';
 import './index.css';
 import { Col, Container, Row } from 'react-bootstrap';
-import Images from './image';
-import Biodata from './Biodata';
+import Eduwork from './Eduwork';
+import Profile from './Biodata';
 import styled from 'styled-components';
-import Col_satu from './skill/col_satu';
-import Col_kedua from './skill/col_kedua';
-import Col_ketiga from './skill/col_ketiga';
+import FriendLists from './skill/Friends';
+import OtherSkill from './skill/OtherSkill';
+import Skill from './skill/Skill';
 import Forms from './form_table/form';
 import Tables from './form_table/table';
 const Fonts = styled.p`
@@ -24,22 +24,22 @@ font-family: "Comic Sans MS", cursive, sans-serif;
                    <Container>
                         <Row>
                             <Col sm={6}>
-                                <Images/>
+                                <Eduwork/>
                             </Col>
                             <Col sm={6}>
-                                <Biodata/>
+                                <Profile/>
                             </Col>
                         </Row>
                         <br />
                         <Row>
                             <Col sm ={4}>
-                                <Col_satu/>
+                                <FriendLists/>
                             </Col>
                             <Col sm ={4}>
-                                <Col_kedua/>
+                                <OtherSkill/>
                             </Col>
                             <Col sm ={4}>
-                                <Col_ketiga/>
+                                <Skill/>
                             </Col>
                         </Row>
                         <br />
