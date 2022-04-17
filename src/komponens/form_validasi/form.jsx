@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Button, Form } from 'react-bootstrap';
+import {  Form } from 'react-bootstrap';
 import * as Validator from 'validatorjs';
 const Input = ({label,type,name,placeholder,onChange}) => {
     return (
