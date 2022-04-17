@@ -13,7 +13,7 @@ import FormValidation from './komponens/form_validasi';
 function App() {
     return (
       <div className="App">
-          <LifeCycleAxios/>
+          <FormValidation/>
       </div>
     );
   }
