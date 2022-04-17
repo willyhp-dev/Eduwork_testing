@@ -3,14 +3,12 @@ import { Button, name , Card, Col, Container, Form, Row } from 'react-bootstrap'
 import { messages } from 'validatorjs/src/lang';
 
 export default class Axioss extends React.Component {
-  state = {
-    beritas: [],
-     search:''
-  }
+  state = {beritas: [],search:''}
     get_Data = (val) =>{
       if(val == ''){
         val = 'all';
       }
+
       this.setState({loading:true})
       fetch(`https://newsapi.org/v2/everything?q=${val}&from=2022-04-15&sortBy=popularity&apiKey=9c2510131de24d47a20d9f258085ac19`)
       .then((response)=> response.json())  
@@ -19,7 +17,8 @@ export default class Axioss extends React.Component {
           console.log({beritas})
           this.setState({ beritas });
         }) 
-    }    
+    } 
+
     componentDidMount(){
       const val = '';
      this.get_Data(val)
@@ -28,6 +27,7 @@ export default class Axioss extends React.Component {
     search = async val =>{
      this.get_Data(val);
     }
+
   onChangeHandler = async e => {
     if(this.search == ''){
       this.search('all');
@@ -35,9 +35,7 @@ export default class Axioss extends React.Component {
     }else{
       this.search(e.target.value);
       this.setState({ value: e.target.value });
-    }
-    
-    };
+    }};
 
   render(){
     return (

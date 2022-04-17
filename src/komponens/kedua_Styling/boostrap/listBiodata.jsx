@@ -28,7 +28,9 @@ export default function ListBiodata(){
         <div>
             {
                 Biodata.map(listdata =>
-               <Grid key = {listdata.index} list = {listdata.list} listbiodata = {listdata.listBiodata} />
+               <Grid key = {listdata.index} 
+                    list = {listdata.list}
+                    listbiodata = {listdata.listBiodata} />
                     )
             }
         </div>

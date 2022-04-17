@@ -1,7 +1,7 @@
 
 import LifeCycler from './komponens/lifecycle_komponen';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import LifeCycleAxios from './komponens/lifecycle_axios';
+
 import { Axios } from 'axios';
 import Bootstrap from './komponens/kedua_Styling/boostrap';
 import ListBiodata from './komponens/kedua_Styling/boostrap/listBiodata';
