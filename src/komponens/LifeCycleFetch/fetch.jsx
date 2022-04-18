@@ -4,7 +4,8 @@ import { messages } from 'validatorjs/src/lang';
 
 export default class Axioss extends React.Component {
   state = {beritas: [],search:''}
-    get_Data = (val) =>{
+   
+  get_Data = (val) =>{
       if(val == ''){
         val = 'all';
       }
