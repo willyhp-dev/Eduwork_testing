@@ -1,6 +1,5 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import FormsValidasi from './form';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './index.css';
 import FormHooks from './formHooks';

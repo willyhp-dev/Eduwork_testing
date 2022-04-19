@@ -1,12 +1,12 @@
 import React from 'react';
-import { Button, name , Card, Col, Container, Form, Row } from 'react-bootstrap';
-import { messages } from 'validatorjs/src/lang';
+import { Card, Col, Container, Form, Row } from 'react-bootstrap';
+
 
 export default class Axioss extends React.Component {
   state = {beritas: [],search:''}
    
   get_Data = (val) =>{
-      if(val == ''){
+      if(val === ''){
         val = 'all';
       }
 
@@ -30,7 +30,7 @@ export default class Axioss extends React.Component {
     }
 
   onChangeHandler = async e => {
-    if(this.search == ''){
+    if(this.search === ''){
       this.search('all');
       this.setState({ value: e.target.value });
     }else{

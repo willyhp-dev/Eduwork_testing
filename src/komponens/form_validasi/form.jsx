@@ -18,7 +18,7 @@ const ShowErrors = ({errors}) =>{
     <ul style={{ color:'red'}}>
        {
            errors.map((error,i) => <li key = {i}>
-               <div class="alert alert-danger" role="alert">
+               <div class="alert alert-danger">
                {error}
               </div>
                </li>)
@@ -31,7 +31,7 @@ const ShowAlert =({success}) =>{
         <div>{success}</div>
     )
 }
-const alert = false;
+
 export default class Forms_Validasi extends React.Component{
     state = {
         email : '',
