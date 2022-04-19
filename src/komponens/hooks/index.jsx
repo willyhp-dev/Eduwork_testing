@@ -9,7 +9,7 @@ export default function FetchHooks(){
     const [beritas,setBerita] = useState([]);
     const [searchTerm,SetsearchTerm]= useState('');
     const [searchResult,setSearchResult] = useState([]);
-    useEffect(() =>{
+    useEffect(() => {
         // fetch('https://newsapi.org/v2/everything?q=tesla&from=2022-03-18&sortBy=publishedAt&apiKey=9c2510131de24d47a20d9f258085ac19')
         // .then(response => response.json())
         // .then(data =>setBerita([data.articles])) 
