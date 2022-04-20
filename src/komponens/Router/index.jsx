@@ -4,7 +4,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHomeUser,faDashboard,faBorderAll } from '@fortawesome/free-solid-svg-icons';
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import './index.css';
-import {BrowserRouter as Router,Link,Route,Routes} from "react-router-dom";
+import {BrowserRouter as Router,Link,Route,Routes,useRoutes} from "react-router-dom";
+import BootstrapStyle from '../kedua_Styling/boostrap';
+import FormHooks from '../FormValidation/formHooks';
+import FetchData from '../LifeCycleFetch/fetch';
+import FetchHooks from '../hooks';
+import Redux from '../redux';
 
 export default function Routers(){
     const[NavlinkBar] =useState([
@@ -13,6 +18,7 @@ export default function Routers(){
         {index:3,link:"/FormValidation",name:"Form Validasi",icon:faHomeUser},//function:<FormValidation/>},
         {index:4,link:"/LifeCycleComponent",name:"LifeCycleComponent",icon:faHomeUser},//function:<LifeCycleComponent/>},
         {index:5,link:"/Hooks",name:"Hooks",icon:faHomeUser},//function:<Hooks/>}
+        {index:6,link:"/redux",name:"Redux",icon:faHomeUser}
     ]);
     // const[Routering] =useState([
     //     {index:1,path:"/",function:<Dashboard/>},
@@ -23,20 +29,25 @@ export default function Routers(){
     const Toggle = ()=>{
         Setsidebar(!sidebar);
     }
-    const Bootstrap = () => {return <h1>Bootstrap</h1>;};
+    const Bootstrap = () => {return <div><BootstrapStyle/></div>};
     const Dashboard = () => {return <h1>Dashboard</h1>;};
-    const FormValidation = ()=>{return(<h1>Form && Validation</h1>)};
-    const LifeCycleComponent = () =>{return(<h1>LifeCycleComponent</h1>)};
-    const Hooks = () =>{return(<h1>Hooks</h1>)}
+    const FormValidation = ()=>{return <FormHooks/>};
+    const LifeCycleComponent = () =>{return <FetchData/>};
+    const Hooks = () =>{return <FetchHooks/>}
+    const Reduxs = () =>{return <Redux/>}
 
-    //   const App = () => {
-    //     let routes = useRoutes([
-    //       { path: "/Bootstrap", element: <Bootstrap /> },
-    //       { path: "/", element: <Dashboard /> },
-    //       // ...
-    //     ]);
-    //     return routes;
-    //   };
+      const App = () => {
+        let routes = useRoutes([
+          { path: "/", element: <Dashboard /> },
+          { path: "/Bootstrap", element: <Bootstrap /> },
+          { path: "/FormValidation", element:<FormValidation/>},
+          { Path: "/LifeCycleComponent", element :<LifeCycleComponent/>},
+          { Path: "/Hooks", element:<Hooks/>},
+          { Path: "/Redux", element: <Reduxs/>  }
+          // ...
+        ]);
+        return routes;
+      };
       const Navlinks = ({link,icon,name,key})=>{
           return(
             <Link key ={key} to ={link}>
@@ -129,12 +140,16 @@ export default function Routers(){
                     <Route path="/FormValidation" element ={<FormValidation/>}/>
                     <Route path="/LifeCycleComponent" element ={<LifeCycleComponent/>}/>
                     <Route path="/Hooks" element ={<Hooks/>}/>
+                    <Route path="/Redux" element ={<Reduxs/>}/>
                     {/* {
                         NavlinkBar.map(links=>
                             <Routers path={links.link} element={links.function}/>
                             )
                     } */}
                 </Routes>
+              
+                  
+                
                 </Card.Body>
                 </Card>
                 </Col>

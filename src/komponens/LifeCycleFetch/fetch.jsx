@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Col, Container, Form, Row } from 'react-bootstrap';
 
 
-export default class Axioss extends React.Component {
+export default class FetchData extends React.Component {
   state = {beritas: [],search:''}
    
   get_Data = (val) =>{

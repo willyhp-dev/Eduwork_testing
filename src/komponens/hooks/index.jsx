@@ -16,7 +16,7 @@ export default function FetchHooks(){
         AxiosData()
     }, []);   
     const AxiosData = async ()=>{
-        let Response = await axios.get("https://newsapi.org/v2/everything?q=tesla&from=2022-03-18&sortBy=publishedAt&apiKey=9c2510131de24d47a20d9f258085ac19");
+        let Response = await axios.get("https://newsapi.org/v2/everything?q=tesla&from=2022-03-20&sortBy=publishedAt&apiKey=9c2510131de24d47a20d9f258085ac19");
         console.log(Response.data.articles);
         setBerita(Response.data.articles);
     }

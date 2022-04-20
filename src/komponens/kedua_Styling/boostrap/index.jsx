@@ -14,7 +14,7 @@ import Tables from './form_table/table';
 const Fonts = styled.p`
 font-family: "Comic Sans MS", cursive, sans-serif;
 `
- export default class Bootstrap extends React.Component{
+ export default class BootstrapStyle extends React.Component{
         render(){
             return(
                 <div>
