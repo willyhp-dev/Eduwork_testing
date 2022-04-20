@@ -3,7 +3,7 @@ import { Card, ListGroup } from 'react-bootstrap';
 
 export default function OtherSkill(){
 
-    const [Otherskill,setOtherskill] = useState([
+    const [Otherskill] = useState([
         {index:1,framework:'laravel'},
         {index:2,framework:'Bootstrap'},
         {index:3,framework:'Reactjs'}

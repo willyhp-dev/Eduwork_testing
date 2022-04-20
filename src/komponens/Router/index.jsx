@@ -36,16 +36,16 @@ export default function Routers(){
     const Hooks = () =>{return <FetchHooks/>}
     const Reduxs = () =>{return <Redux/>}
 
-      const App = () => {
-        let routes = useRoutes([
-          { path: "/", element: <Dashboard /> },
-          { path: "/Bootstrap", element: <Bootstrap /> },
-          { path: "/FormValidation", element:<FormValidation/>},
-          { Path: "/LifeCycleComponent", element :<LifeCycleComponent/>},
-          { Path: "/Hooks", element:<Hooks/>},
-          { Path: "/Redux", element: <Reduxs/>  }
-          // ...
-        ]);
+    //   const App = () => {
+    //     let routes = useRoutes([
+    //       { path: "/", element: <Dashboard /> },
+    //       { path: "/Bootstrap", element: <Bootstrap /> },
+    //       { path: "/FormValidation", element:<FormValidation/>},
+    //       { Path: "/LifeCycleComponent", element :<LifeCycleComponent/>},
+    //       { Path: "/Hooks", element:<Hooks/>},
+    //       { Path: "/Redux", element: <Reduxs/>  }
+    //       // ...
+    //     ]);
         return routes;
       };
       const Navlinks = ({link,icon,name,key})=>{
