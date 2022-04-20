@@ -1,0 +1,28 @@
+.heigth{
+    min-height: 550px;
+    margin-right: 10px;
+}
+.bRadius{
+    border-radius: 0px;
+}
+.border-setting{
+   border: 1px solid white;
+   text-align: start;
+}
+.button-margin{
+    padding-left: 20px;
+}
+.button-margin:hover{
+    background-color: whitesmoke;
+    color: black;
+}
+.size-icon{
+    width: 22px;
+    height: 22px;
+}
+.size-icon-toggle{
+    width: 25px;
+    height: 25px;
+    background-color: white;
+    color:black;
+}

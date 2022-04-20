@@ -1,12 +1,11 @@
 
-
 import 'bootstrap/dist/css/bootstrap.min.css';
-import FetchHooks from './komponens/hooks';
+import Routers from './komponens/Router';
 
 function App() {
     return (
       <div className="App">
-          <FetchHooks/>
+          <Routers/>
       </div>
     );
   }
