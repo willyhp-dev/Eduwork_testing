@@ -1,6 +1,7 @@
 let inisialite = {
     count:0
 }
+
 const counterReducer = (state = inisialite, action )=>{
     switch(action.type){
         case 'INC':
@@ -15,5 +16,6 @@ const counterReducer = (state = inisialite, action )=>{
             default:
                 return state
     }
+    
 }
 export default counterReducer;

@@ -8,11 +8,12 @@ export default function Counter(){
 
     return(
         <div>
-            <Button onClick={()=> dispatch({type :'DEC', value :1})}> - </Button>
+            <Button onClick={()=> console.log(dispatch({type :'DEC', count :1})) }> - </Button>
             {' '}<span>{count} </span>{' '}
-           <Button onClick={()=> dispatch({type :'INC', value :1})}> + </Button>
+           <Button onClick={()=> console.log(dispatch({type :'INC', count :1})) }> + </Button>
            {
                console.log({count})
+               
            }
         </div>
         
