@@ -46,8 +46,8 @@ export default function Routers(){
     //       { Path: "/Redux", element: <Reduxs/>  }
     //       // ...
     //     ]);
-        return routes;
-      };
+    //     return routes;
+    //   };
       const Navlinks = ({link,icon,name,key})=>{
           return(
             <Link key ={key} to ={link}>
