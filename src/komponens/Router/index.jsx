@@ -5,7 +5,7 @@ import { faHomeUser,faDashboard,faBorderAll } from '@fortawesome/free-solid-svg-
 import { Button, Card, Col, Row } from 'react-bootstrap';
 import './index.css';
 import {BrowserRouter as Router,Link,Route,Routes} from "react-router-dom";
-import Bootstrap from 'bootstrap';
+
 export default function Routers(){
     const[NavlinkBar] =useState([
         {index:1,link:"/",name:"dashboard",icon:faDashboard},//function:<Dashboard/>},
@@ -50,9 +50,9 @@ export default function Routers(){
         </Link>
           )
       }
-      const Routers = ({path,element}) =>{
-        <Route path={path} element ={element}/>
-      }
+    //   const Routers = ({path,element}) =>{
+    //     <Route path={path} element ={element}/>
+    //   }
 
     return(
         <div>
