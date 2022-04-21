@@ -20,7 +20,7 @@ export default class FetchData extends React.Component {
           this.setState({ beritas });
         }) 
         .catch(err=>{
-         return err.message;
+          this.setState({ error: err.message } )
         })
     } 
     messagers(messages){
@@ -55,8 +55,9 @@ export default class FetchData extends React.Component {
       onChange={e => this.onChangeHandler(e)}
       />
       </Form.Group>
+    
             { 
-
+              !this.state.error ?
             this.state.beritas.map((berita,i) =>
             <Col key={i}  sm={4}>
               <Card style={{ width: '18rem' }}>
@@ -70,7 +71,10 @@ export default class FetchData extends React.Component {
                 </Card.Body>
               </Card>
               </Col>)
-            
+              :
+            <div className='alert alert-danger alert-sm'>
+                  {this.state.error}
+            </div>
           }
           {
               console.log(this.messagers(messages))

@@ -9,6 +9,7 @@ export default function FetchHooks(){
     const [beritas,setBerita] = useState([]);
     const [searchTerm,SetsearchTerm]= useState('');
     const [searchResult,setSearchResult] = useState([]);
+    const [error,setError] = useState(false);
     useEffect(() => {
         // fetch('https://newsapi.org/v2/everything?q=tesla&from=2022-03-18&sortBy=publishedAt&apiKey=9c2510131de24d47a20d9f258085ac19')
         // .then(response => response.json())
@@ -16,9 +17,23 @@ export default function FetchHooks(){
         AxiosData()
     }, []);   
     const AxiosData = async ()=>{
-        let Response = await axios.get("https://newsapi.org/v2/everything?q=tesla&from=2022-03-20&sortBy=publishedAt&apiKey=9c2510131de24d47a20d9f258085ac19");
-        console.log(Response.data.articles);
-        setBerita(Response.data.articles);
+        // let Response = await axios.get("https://newsapi.org/v2/everything?q=tesla&from=2022-03-20&sortBy=publishedAt&apiKey=9c2510131de24d47a20d9f258085ac19");
+        // if(!Response){
+        //     console.log( Seterror("Tidak ada Response Data Berita"))
+        //     Seterror(Response)
+        // }
+        // else{
+        //     console.log(Response.data.articles);
+        //     setBerita(Response.data.articles);
+        // }
+        axios.get("https://newsapi.org/v2/everything?q=tesla&from=2022-03-20&sortBy=publishedAt&apiKey=9c2510131de24d47a20d9f258085ac19")
+        .then(response =>response.json())
+        .then(response =>setBerita(response.articles))
+        .catch(err =>{
+           setError(true);
+        
+        })
+       
     }
     const SearchData =(value)=>{
         SetsearchTerm(value);
@@ -64,6 +79,11 @@ return(
         <Form.Control type="text" placeholder="Search Country" onChange={(e)=>SearchData(e.target.value)} />
     </Form.Group>
             <Row>
+                {
+                    error && <div className='alert alert-danger'>
+                        Tidak Ada Response Data
+                    </div>
+                }
         {
             searchTerm.length > 1 ? (
                 searchResult.map(a=>(
