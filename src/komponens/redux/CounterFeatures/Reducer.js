@@ -1,7 +1,6 @@
 let inisialite = {
     count:0
 }
-
 const counterReducer = (state = inisialite, action )=>{
     switch(action.type){
         case 'INC':
