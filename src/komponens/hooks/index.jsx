@@ -9,30 +9,29 @@ export default function FetchHooks(){
     const [beritas,setBerita] = useState([]);
     const [searchTerm,SetsearchTerm]= useState('');
     const [searchResult,setSearchResult] = useState([]);
-    const [error,setError] = useState(false);
+    const [error,seterror] = useState(false);
     useEffect(() => {
-        // fetch('https://newsapi.org/v2/everything?q=tesla&from=2022-03-18&sortBy=publishedAt&apiKey=9c2510131de24d47a20d9f258085ac19')
+        // fetch('https://newsapi.org/v2/everything?q=all&from=2022-04-15&sortBy=popularity&apiKey=9c2510131de24d47a20d9f258085ac19')
         // .then(response => response.json())
         // .then(data =>setBerita([data.articles])) 
         AxiosData()
     }, []);   
-    const AxiosData = async ()=>{
-        // let Response = await axios.get("https://newsapi.org/v2/everything?q=tesla&from=2022-03-20&sortBy=publishedAt&apiKey=9c2510131de24d47a20d9f258085ac19");
-        // if(!Response){
-        //     console.log( Seterror("Tidak ada Response Data Berita"))
-        //     Seterror(Response)
-        // }
-        // else{
-        //     console.log(Response.data.articles);
-        //     setBerita(Response.data.articles);
-        // }
-        axios.get("https://newsapi.org/v2/everything?q=tesla&from=2022-03-20&sortBy=publishedAt&apiKey=9c2510131de24d47a20d9f258085ac19")
-        .then(response =>response.json())
-        .then(response =>setBerita(response.articles))
-        .catch(err =>{
-           setError(true);
+    const AxiosData = async()=>{
+        let Response = await axios.get("https://newsapi.org/v2/everything?q=all&from=2022-04-15&sortBy=popularity&apiKey=9c2510131de24d47a20d9f258085ac19");
+        if(!Response){
+        seterror(true);
+        }
+        else{
+            console.log(Response.data.articles);
+            setBerita(Response.data.articles);
+        }
+        // axios.get("https://newsapi.org/v2/everything?q=all&from=2022-04-15&sortBy=popularity&apiKey=9c2510131de24d47a20d9f258085ac19")
+        // .then(response =>response.json())
+        // .then(response =>setBerita(response.articles))
+        // .catch(err =>{
+        //    setError(true);
         
-        })
+        // })
        
     }
     const SearchData =(value)=>{

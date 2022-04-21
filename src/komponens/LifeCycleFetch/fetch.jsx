@@ -12,9 +12,9 @@ export default class FetchData extends React.Component {
     }
       this.setState({loading:true})
       fetch(`https://newsapi.org/v2/everything?q=${val}&from=2022-04-15&sortBy=popularity&apiKey=9c2510131de24d47a20d9f258085ac19`)
-      .then((response)=>{
+      .then((response)=>
           response.json()
-      })  
+      )  
       .then(response => {
           const beritas = response.articles;
           this.setState({ beritas });
