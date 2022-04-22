@@ -20,11 +20,7 @@ export default function Routers(){
         {index:5,link:"/Hooks",name:"Hooks",icon:faHomeUser},//function:<Hooks/>}
         {index:6,link:"/redux",name:"Redux",icon:faHomeUser}
     ]);
-    // const[Routering] =useState([
-    //     {index:1,path:"/",function:<Dashboard/>},
-    //     {index:2,path:"/bootstrap",function:<Bootstrap/>},
-    //     {index:3,path:"/FormValidation"}
-    // ])
+    
     const[sidebar,Setsidebar]= useState();
     const Toggle = ()=>{
         Setsidebar(!sidebar);
@@ -36,18 +32,7 @@ export default function Routers(){
     const Hooks = () =>{return <FetchHooks/>}
     const Reduxs = () =>{return <Redux/>}
 
-    //   const App = () => {
-    //     let routes = useRoutes([
-    //       { path: "/", element: <Dashboard /> },
-    //       { path: "/Bootstrap", element: <Bootstrap /> },
-    //       { path: "/FormValidation", element:<FormValidation/>},
-    //       { Path: "/LifeCycleComponent", element :<LifeCycleComponent/>},
-    //       { Path: "/Hooks", element:<Hooks/>},
-    //       { Path: "/Redux", element: <Reduxs/>  }
-    //       // ...
-    //     ]);
-    //     return routes;
-    //   };
+    
       const Navlinks = ({link,icon,name,key})=>{
           return(
             <Link key ={key} to ={link}>
@@ -61,9 +46,7 @@ export default function Routers(){
         </Link>
           )
       }
-    //   const Routers = ({path,element}) =>{
-    //     <Route path={path} element ={element}/>
-    //   }
+
 
     return(
         <div>
@@ -78,45 +61,7 @@ export default function Routers(){
                         <Navlinks key = {Navlink.index} link={Navlink.link} icon={Navlink.icon} name={Navlink.name} />       
                      )
                     }
-                    {/* <Link to ="/">
-                        <Button  className=' btn btn-dark w-100 m-0 button-margin rounded-0 pl-3 border'>
-                        <Row>
-                            <Col sm={2} ><FontAwesomeIcon icon={faDashboard} className ='size-icon'></FontAwesomeIcon></Col>
-                            <Col sm={7} >   Dashboard   </Col>
-                            <Col sm={3}></Col>
-                        </Row>
-                    </Button>
-                    </Link>
-                    <Link to ="/Bootstrap">
-                    <Button  className=' btn btn-dark w-100 m-0 button-margin rounded-0 pl-3 border'>
-                        <Row>
-                            <Col sm={2} ><FontAwesomeIcon icon={faHomeUser} className ='size-icon'></FontAwesomeIcon></Col>
-                            <Col sm={7} >Bootstrap </Col>
-                            <Col sm={4}></Col>
-                        </Row> 
-                    </Button>
-                    </Link>
-                    <Button  className=' btn btn-dark w-100 m-0 button-margin rounded-0 pl-3 border'>
-                        <Row>
-                            <Col sm={2} ><FontAwesomeIcon icon={faHomeUser} className ='size-icon'></FontAwesomeIcon></Col>
-                            <Col sm={7} >Form Validasi</Col>
-                            <Col sm={3}></Col>
-                        </Row> 
-                    </Button>
-                    <Button  className=' btn btn-dark w-100 m-0 button-margin rounded-0 pl-3 border'>
-                        <Row>
-                            <Col sm={2} ><FontAwesomeIcon icon={faHomeUser} className ='size-icon'></FontAwesomeIcon></Col>
-                            <Col sm={7} >LifeCycle</Col>
-                            <Col sm={3}></Col>
-                        </Row> 
-                    </Button>
-                    <Button  className=' btn btn-dark w-100 m-0 button-margin rounded-0 pl-3 border'>
-                        <Row>
-                            <Col sm={2} ><FontAwesomeIcon icon={faHomeUser} className ='size-icon'></FontAwesomeIcon></Col>
-                            <Col sm={7} >Hooks</Col>
-                            <Col sm={3}></Col>
-                        </Row> 
-                    </Button> */}
+                  
                 </Col>
                 }
                 
@@ -141,11 +86,7 @@ export default function Routers(){
                     <Route path="/LifeCycleComponent" element ={<LifeCycleComponent/>}/>
                     <Route path="/Hooks" element ={<Hooks/>}/>
                     <Route path="/Redux" element ={<Reduxs/>}/>
-                    {/* {
-                        NavlinkBar.map(links=>
-                            <Routers path={links.link} element={links.function}/>
-                            )
-                    } */}
+                   
                 </Routes>
               
                   
