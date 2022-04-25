@@ -3,8 +3,7 @@ import React, { useEffect, useState } from "react";
 import { Card, Col, Container, Form, Row } from "react-bootstrap";
 export default function FetchHooks() {
   const [beritas, setBerita] = useState([]);
-  const [searchTerm, SetsearchTerm] = useState("");
-  const [searchResult, setSearchResult] = useState([]);
+  
   const [error, seterror] = useState(true);
   useEffect(() => {
     // fetch('https://newsapi.org/v2/everything?q=all&from=2022-04-15&sortBy=popularity&apiKey=9c2510131de24d47a20d9f258085ac19')
