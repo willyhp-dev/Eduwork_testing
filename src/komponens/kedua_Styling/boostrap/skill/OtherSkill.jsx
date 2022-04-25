@@ -1,12 +1,8 @@
-import React, { useState } from "react";
-import { Card, ListGroup } from "react-bootstrap";
 
+import { Card, ListGroup } from "react-bootstrap";
+import { Otherskill } from "../IndexArray";
 export default function OtherSkill() {
-  const [Otherskill] = useState([
-    { index: 1, framework: "laravel" },
-    { index: 2, framework: "Bootstrap" },
-    { index: 3, framework: "Reactjs" },
-  ]);
+  
   const List = ({ key, frameworks }) => {
     return <ListGroup.Item key={key}>{frameworks}</ListGroup.Item>;
   };

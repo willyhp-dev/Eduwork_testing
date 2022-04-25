@@ -1,16 +1,8 @@
-import React, { useState } from "react";
-import { Col, Row } from "react-bootstrap";
 
+import { Col, Row } from "react-bootstrap";
+import { Biodata } from "./IndexArray";
 export default function ListBiodata() {
-  const [Biodata] = useState([
-    { index: 1, list: "nama", listBiodata: "Willy Handoyo" },
-    { index: 2, list: "umur", listBiodata: "24" },
-    { index: 3, list: "tempat lahir", listBiodata: "Pontianak" },
-    { index: 4, list: "tanggal lahir", listBiodata: "25-01-1998" },
-    { index: 5, list: "Hobby", listBiodata: "Game Online" },
-    { index: 6, list: "Pendidikan", listBiodata: "S1 IT" },
-    { index: 7, list: "Domisili", listBiodata: "Pontianak" },
-  ]);
+  
   const Grid = ({ key, list, listbiodata }) => {
     return (
       <div>

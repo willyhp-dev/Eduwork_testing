@@ -1,13 +1,8 @@
-import React, { useState } from "react";
-import { Card, ListGroup } from "react-bootstrap";
 
+import { Card, ListGroup } from "react-bootstrap";
+import { skill } from "../IndexArray";
 export default function Skill() {
-  const [skill] = useState([
-    { index: 1, skills: "HTML" },
-    { index: 2, skills: "CSS" },
-    { index: 3, skills: "PHP" },
-    { index: 4, skills: "JAVASCRIPT" },
-  ]);
+ 
   const List = ({ key, skill }) => {
     return <ListGroup.Item key={key}>{skill}</ListGroup.Item>;
   };

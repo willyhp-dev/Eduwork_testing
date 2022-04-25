@@ -9,6 +9,7 @@ import {
   Reduxs,
   Bootstrap,
 } from "./Navlink";
+
 import { Button, Card, Col, Row } from "react-bootstrap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBorderAll } from "@fortawesome/free-solid-svg-icons";

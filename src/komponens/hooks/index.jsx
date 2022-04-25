@@ -12,9 +12,9 @@ export default function FetchHooks() {
     // .then(data =>setBerita([data.articles]))
     AxiosData();
   }, []);
-  const AxiosData = async () => {
+  const AxiosData = async (value) => {
     let Response = await axios.get(
-      "https://newsapi.org/v2/everything?q=all&from=2022-04-15&sortBy=popularity&apiKey=9c2510131de24d47a20d9f258085ac19"
+      `https://newsapi.org/v2/everything?q=${value}&from=2022-04-15&sortBy=popularity&apiKey=9c2510131de24d47a20d9f258085ac19`
     );
     if (!Response) {
       seterror(true);
@@ -24,21 +24,21 @@ export default function FetchHooks() {
       setBerita(Response.data.articles);
     }
   };
-  const SearchData = (value) => {
-    SetsearchTerm(value);
+  // const SearchData = (value) => {
+  //   SetsearchTerm(value);
 
-    if (searchTerm !== "") {
-      const FilterData = beritas.filter((item) => {
-        return Object.values(item)
-          .join("")
-          .toLowerCase()
-          .includes(searchTerm.toLowerCase());
-      });
-      setSearchResult(FilterData);
-    } else {
-      setSearchResult(beritas);
-    }
-  };
+  //   if (searchTerm !== "") {
+  //     const FilterData = beritas.filter((item) => {
+  //       return Object.values(item)
+  //         .join("")
+  //         .toLowerCase()
+  //         .includes(searchTerm.toLowerCase());
+  //     });
+  //     setSearchResult(FilterData);
+  //   } else {
+  //     setSearchResult(beritas);
+  //   }
+  // };
   // const Search = ({label,type,placeholder})=>{
   //     return(
   //     <Form.Group className="mb-3">
@@ -61,7 +61,7 @@ export default function FetchHooks() {
   //     </Card>
   //     </Col>
   // }
-  console.log(searchResult);
+
   return (
     <div>
       <Container>
@@ -70,28 +70,13 @@ export default function FetchHooks() {
           <Form.Control
             type="text"
             placeholder="Search Country"
-            onChange={(e) => SearchData(e.target.value)}
+            onChange={(e) => AxiosData(e.target.value)}
           />
         </Form.Group>
         <Row>
           {error ? (
             <div className="alert alert-danger">Tidak Ada Response Data</div>
-          ) : searchTerm.length > 1 ? (
-            searchResult.map((a) => (
-              <Col sm={4}>
-                <Card style={{ width: "18rem" }}>
-                  <Card.Img variant="top" src={a.urlToImage} />
-                  <Card.Body>
-                    <Card.Title>{a.title}</Card.Title>
-                    <Card.Text>{a.description}</Card.Text>
-                    <a href={a.url} className="btn btn-primary">
-                      Go somewhere
-                    </a>
-                  </Card.Body>
-                </Card>
-              </Col>
-            ))
-          ) : (
+          ): (
             beritas.map((a) => (
               <Col sm={4}>
                 <Card style={{ width: "18rem" }}>

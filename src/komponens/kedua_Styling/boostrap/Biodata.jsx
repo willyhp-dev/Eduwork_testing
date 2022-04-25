@@ -2,6 +2,7 @@ import React from "react";
 import { Card } from "react-bootstrap";
 import ListBiodata from "./listBiodata";
 
+
 export default class Biodata extends React.Component {
   render() {
     return (

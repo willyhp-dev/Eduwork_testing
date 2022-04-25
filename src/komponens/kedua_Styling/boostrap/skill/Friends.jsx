@@ -1,12 +1,8 @@
-import React, { useState } from "react";
+
 import { Card, ListGroup } from "react-bootstrap";
+import { Friends } from "../IndexArray";
 
 export default function FriendLists() {
-  const [Friends] = useState([
-    { index: 1, friend: "Welly Cipwanto" },
-    { index: 2, friend: "Budi Santoso" },
-    { index: 3, friend: "Budi Setiawan" },
-  ]);
   const FriendList = ({ key, header, listFriend }) => {
     return <ListGroup.Item key={key}>{listFriend}</ListGroup.Item>;
   };

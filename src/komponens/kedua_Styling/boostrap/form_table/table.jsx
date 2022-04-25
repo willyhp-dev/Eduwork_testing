@@ -1,16 +1,9 @@
-import React, { useState } from 'react';
-import  { Card,Table } from 'react-bootstrap';
+
+import { Card, Table } from 'react-bootstrap';
+import { TableHeader,TableBody } from '../IndexArray';
 
 export default function Tables(){
-    const[TableHeader] = useState([
-        {index:1,nama:"Nama",umur:"Umur",alamat:"Alamat"}
-    ]);
-    const[TableBody] = useState([
-        {index:1,nama:"budi",umur:24,alamat:"sungai Raya Dalam"},
-        {index:2,nama:"kati",umur:24,alamat:"sungai Raya Dalam"},
-        {index:3,nama:"Rio",umur:24,alamat:"sungai Raya Dalam"},
-
-    ])
+    
     const Theader = ({no,nama,umur,alamat})=>{
         return(
         <tr>

@@ -1,14 +1,9 @@
 
-import React, { useState } from 'react';
-import {  Button, Card, Form } from 'react-bootstrap';
+import { Button, Card, Form } from 'react-bootstrap';
+import { Formss } from "./../IndexArray";
 
 export default function Forms(){
-    const [Formss] = useState([
-        {index:1,type:"email",label:"email Address",placeholder:"Example : Name@example.com" },
-        {index:2,type:"text",label:"Username",placeholder:"Example : Budi Santoso" },
-        {index:3,type:"text",label:"No Handphone",placeholder:"Example : 081245678923" },
-        {index:4,type:"text",label:"Alamat",placeholder:"Example : Jln.Sungai Raya Dalam" },
-    ])
+   
     const Input = ({type,placeholder,label,key}) =>{
         return(
             <Form.Group key ={key} className="mb-3" controlId="formBasicEmail">
