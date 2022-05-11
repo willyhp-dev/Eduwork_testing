@@ -33,20 +33,19 @@ const Toggle = () => {
               ></FontAwesomeIcon>
             </Col>
             <Col sm={7}>{name}</Col>
-            <Col sm={3}></Col>
+
           </Row>
         </Button>
       </Link>
     );
   };
-
   return (
     <div>
       <Router>
         <Row className="">
           {!sidebar && (
             <Col sm={2} className="bg-dark heigth p-0 m-0">
-              <h4 className="text-white p-2">
+              <h4 className="text-white">
                 <center>SideBar</center>
               </h4>
               {NavlinkBar.map((Navlink) => (

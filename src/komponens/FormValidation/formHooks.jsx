@@ -32,7 +32,7 @@ export default function FormHooks() {
 
   
   return (
-    <div>
+    <div className="container">
       <h3>Tugas Form && Validasi</h3>
       <Form onSubmit={handleSubmit(onSubmit)}>
         {ListForm.map((listforms) => (

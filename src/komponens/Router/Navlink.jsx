@@ -42,7 +42,6 @@ const Reduxs = () => {
 };
 const Bootstrap = () => {
   return (
-
       <BootstrapStyle />
   );
 };
